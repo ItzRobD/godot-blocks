@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7733ki5lldyg"]
+
+[ext_resource type="Script" uid="uid://21w8fps7mvwh" path="res://static_piece.gd" id="1_cj6eu"]
+[ext_resource type="Texture2D" uid="uid://13wqruvscacb" path="res://assets/UI/hold/hold.png" id="1_gf57l"]
+
+[node name="Hold" type="Control" unique_id=873940991]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 0
+offset_transform_enabled = true
+script = ExtResource("1_cj6eu")
+metadata/_edit_group_ = true
+
+[node name="Border" type="Sprite2D" parent="." unique_id=1102917643]
+texture = ExtResource("1_gf57l")
+offset = Vector2(-92, 92)

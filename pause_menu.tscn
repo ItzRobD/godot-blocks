@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://7lhbw67etcks"]
+
+[ext_resource type="Texture2D" uid="uid://cruaeu64i1bxu" path="res://assets/UI/controls/pause.png" id="1_nwcfo"]
+[ext_resource type="Texture2D" uid="uid://mjp3c0lorkv0" path="res://assets/UI/controls/controls.png" id="2_05uyy"]
+
+[node name="PauseMenu" type="Control" unique_id=721024421]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseHeader" type="TextureRect" parent="." unique_id=410730154]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 92)
+offset_transform_scale = Vector2(4, 4)
+texture = ExtResource("1_nwcfo")
+
+[node name="Controls" type="TextureRect" parent="." unique_id=811573785]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_05uyy")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cjqgvs450cdvu"]
+
+[ext_resource type="Script" uid="uid://bybqpdhv8cmbk" path="res://audio_manager.gd" id="1_jisk1"]
+
+[node name="AudioManager" type="Node" unique_id=444360704]
+script = ExtResource("1_jisk1")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=360107884]
+unique_name_in_owner = true
+bus = &"Music"
+
+[node name="SFX1" type="AudioStreamPlayer" parent="." unique_id=1368546273]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="SFX2" type="AudioStreamPlayer" parent="." unique_id=922892819]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="SFX3" type="AudioStreamPlayer" parent="." unique_id=1638274372]
+unique_name_in_owner = true
+bus = &"SFX"
+

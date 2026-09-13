@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://ceuldi2y4oxdp"]
+
+[ext_resource type="Script" uid="uid://sjsfi0ablfr" path="res://game_mode.gd" id="1_0i4cq"]
+[ext_resource type="Script" uid="uid://cwgvcayocuc24" path="res://grid.gd" id="1_bdyf1"]
+[ext_resource type="PackedScene" uid="uid://ckichqm4f5cpf" path="res://game_state_manager.tscn" id="2_2hnqr"]
+[ext_resource type="PackedScene" uid="uid://pyqy1huapays" path="res://next.tscn" id="2_8e3yi"]
+[ext_resource type="PackedScene" uid="uid://c7733ki5lldyg" path="res://hold.tscn" id="2_ewu35"]
+[ext_resource type="Texture2D" uid="uid://cx5bu28baepe1" path="res://assets/UI/border/border.png" id="3_bppjw"]
+[ext_resource type="Texture2D" uid="uid://mjp3c0lorkv0" path="res://assets/UI/controls/controls.png" id="5_htjo0"]
+[ext_resource type="Texture2D" uid="uid://bsgmbtdinvq6h" path="res://assets/background/background.png" id="6_x4y80"]
+[ext_resource type="PackedScene" uid="uid://7lhbw67etcks" path="res://pause_menu.tscn" id="9_pcmjr"]
+[ext_resource type="PackedScene" uid="uid://cjqgvs450cdvu" path="res://audio_manager.tscn" id="10_647fo"]
+[ext_resource type="PackedScene" uid="uid://cy8scrhmtqs2u" path="res://MainMenu.tscn" id="11_en5sj"]
+
+[node name="GameMode" type="Node" unique_id=1649836908]
+script = ExtResource("1_0i4cq")
+force_shape = 4
+
+[node name="AudioManager" parent="." unique_id=444360704 instance=ExtResource("10_647fo")]
+unique_name_in_owner = true
+
+[node name="GameStateManager" parent="." unique_id=1072570174 instance=ExtResource("2_2hnqr")]
+
+[node name="UIParent" type="Control" parent="." unique_id=1078163079]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="UIParent" unique_id=1892685986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_x4y80")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="GridBorder" type="TextureRect" parent="UIParent" unique_id=88508825]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 95.0
+offset_right = 176.0
+offset_bottom = 767.0
+grow_horizontal = 2
+texture = ExtResource("3_bppjw")
+
+[node name="Controls" type="TextureRect" parent="UIParent" unique_id=28425828]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -117.0
+offset_right = 195.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+offset_transform_scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_htjo0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIParent" unique_id=1117346311]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -104.0
+offset_right = 124.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="VBoxLabels" type="VBoxContainer" parent="UIParent/HBoxContainer" unique_id=1466180343]
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="UIParent/HBoxContainer/VBoxLabels" unique_id=1777898654]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Difficulty:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="UIParent/HBoxContainer/VBoxLabels" unique_id=1578724727]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="Lines" type="Label" parent="UIParent/HBoxContainer/VBoxLabels" unique_id=1335199188]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Lines Cleared:"
+horizontal_alignment = 1
+
+[node name="VBoxValues" type="VBoxContainer" parent="UIParent/HBoxContainer" unique_id=177378571]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="DifficultyValue" type="Label" parent="UIParent/HBoxContainer/VBoxValues" unique_id=1775020354]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+
+[node name="ScoreValue" type="Label" parent="UIParent/HBoxContainer/VBoxValues" unique_id=979393862]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+
+[node name="LinesValue" type="Label" parent="UIParent/HBoxContainer/VBoxValues" unique_id=1109567517]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+
+[node name="DifficultyBar" type="ProgressBar" parent="UIParent" unique_id=1065057819]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -27.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -200)
+
+[node name="Grid" type="Node2D" parent="." unique_id=1136952561]
+position = Vector2(200, 111)
+script = ExtResource("1_bdyf1")
+metadata/_custom_type_script = "uid://cwgvcayocuc24"
+
+[node name="Next" parent="." unique_id=873940991 instance=ExtResource("2_8e3yi")]
+
+[node name="Hold" parent="." unique_id=461183030 instance=ExtResource("2_ewu35")]
+offset_top = 0.0
+offset_bottom = 0.0
+
+[node name="LockTimer" type="Timer" parent="." unique_id=1447802936]
+wait_time = 0.5
+one_shot = true
+
+[node name="PauseMenu" parent="." unique_id=721024421 instance=ExtResource("9_pcmjr")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MainMenu" parent="." unique_id=1133090518 instance=ExtResource("11_en5sj")]
+visible = false
+
+[connection signal="difficulty_changed" from="GameStateManager" to="." method="_on_game_state_manager_difficulty_changed"]
+[connection signal="difficulty_progress_changed" from="GameStateManager" to="." method="_on_game_state_manager_difficulty_progress_changed"]
+[connection signal="lines_cleared" from="GameStateManager" to="." method="_on_game_state_manager_lines_cleared"]
+[connection signal="score_changed" from="GameStateManager" to="." method="_on_game_state_manager_score_changed"]
+[connection signal="state_changed" from="GameStateManager" to="." method="_on_game_state_manager_state_changed"]
+[connection signal="on_lines_cleared" from="Grid" to="." method="_on_grid_on_lines_cleared"]
+[connection signal="timeout" from="LockTimer" to="." method="_on_lock_timer_timeout"]
+[connection signal="button_pressed" from="MainMenu" to="." method="_on_main_menu_button_pressed"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cy8scrhmtqs2u"]
+
+[ext_resource type="Script" uid="uid://dsw3h0lh2j3f3" path="res://main_menu.gd" id="1_i26rj"]
+
+[node name="MainMenu" type="Control" unique_id=1133090518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1381192045]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09630313, 0.54815316, 0.7612633, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1771325478]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -138.0
+offset_right = 260.5
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=1451896035]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "T3-TR15"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1640415079]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_position = Vector2(0, 196)
+theme_override_font_sizes/font_size = 96
+text = "Start"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
